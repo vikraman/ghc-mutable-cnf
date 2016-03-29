@@ -20,7 +20,7 @@ ENV GHC_PREFIX /opt/ghc
 
 RUN mkdir -p ${GHC_PREFIX}
 
-RUN sed -e 's/#BuildFlavour = perf/BuildFlavour = perf/' \
+RUN sed -e 's/#BuildFlavour = quick/BuildFlavour = quick/' \
         -e 's/#V=0/V=0/' mk/build.mk.sample > mk/build.mk && \
     ./boot && ./configure --quiet --prefix ${GHC_PREFIX} && \
     make -j && make install
