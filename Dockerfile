@@ -27,7 +27,7 @@ RUN mkdir -p ${GHC_PREFIX}
 RUN sed -e 's/#BuildFlavour = quick/BuildFlavour = quick/' \
         -e 's/#V=0/V=0/' mk/build.mk.sample > mk/build.mk && \
     ./boot && ./configure --quiet --prefix ${GHC_PREFIX} && \
-    make -j1 && make install
+    make -j2 && make install
 
 ENV PATH ${GHC_PREFIX}/bin:${PATH}
 WORKDIR /root
