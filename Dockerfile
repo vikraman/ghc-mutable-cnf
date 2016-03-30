@@ -2,6 +2,10 @@ FROM fpco/stack-build:lts-5
 
 MAINTAINER Vikraman <git@vikraman.org>
 
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get -y update && apt-get -y upgrade && \
+    apt-get -y install llvm-3.6
+
 WORKDIR /root
 
 RUN git clone --quiet --recursive git://git.haskell.org/ghc.git
