@@ -12,7 +12,7 @@ RUN git clone --quiet --recursive git://git.haskell.org/ghc.git
 
 WORKDIR /root/ghc
 
-ENV SUBMOD_SHA 3e79757d16bb46b2313e022a2fc7793ee11d9278
+ENV SUBMOD_SHA 9018a2565c7a4669d93aac61f25c313c394b2441
 
 RUN git remote add fork https://github.com/iu-parfunc/ghc.git && \
     git fetch fork && \
